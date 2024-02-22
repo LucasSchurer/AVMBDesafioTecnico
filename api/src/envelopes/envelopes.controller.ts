@@ -1,7 +1,9 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Req, Res } from '@nestjs/common';
 import { EnvelopesService } from './envelopes.service';
 import { Documento, Envelope } from 'src/schemas/envelope.schema';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Envelopes')
 @Controller('envelopes')
 export class EnvelopesController {
   constructor(private readonly envelopesService: EnvelopesService) {}

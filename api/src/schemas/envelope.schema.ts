@@ -2,7 +2,6 @@ import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { RepositorioId } from './repositorio.schema';
 import { UsuarioId } from './usuario.schema';
 
-
 export class EnvelopeId {
   constructor(id: Number) {
     this.id = id

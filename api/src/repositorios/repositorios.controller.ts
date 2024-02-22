@@ -1,7 +1,9 @@
 import { Body, ClassSerializerInterceptor, Controller, Delete, Get, Param, Post, UseInterceptors, UsePipes, ValidationPipe } from '@nestjs/common';
 import { RepositoriosService } from './repositorios.service';
 import { Repositorio } from 'src/schemas/repositorio.schema';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Repositorios')
 @Controller('repositorios')
 export class RepositoriosController {
   constructor(private readonly repositoriosService: RepositoriosService) {}
