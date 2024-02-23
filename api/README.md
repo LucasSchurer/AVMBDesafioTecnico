@@ -25,3 +25,7 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 ```
+
+## Swagger
+
+Para visualizar a documentação, acessar `http://localhost:3000/docs`.
