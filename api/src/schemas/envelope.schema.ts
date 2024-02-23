@@ -1,6 +1,7 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { RepositorioId } from './repositorio.schema';
 import { UsuarioId } from './usuario.schema';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class EnvelopeId {
   constructor(id: Number) {
@@ -49,18 +50,23 @@ export class Documento {
 
 @Schema()
 export class Envelope {
+  @ApiProperty({description: 'ID do envelope'})
   @Prop({required: true})
   id: Number
 
+  @ApiProperty({description: 'ID do repositório que o envelope pertence',  example: {Repositorio: {id: 0}}})
   @Prop()
   Repositorio: RepositorioId
 
+  @ApiProperty({description: 'ID do usuário dono do envelope',  example: {Usuario: {id: 0}}})
   @Prop()
   Usuario: UsuarioId
 
+  @ApiProperty({description: 'Descrição do envelope',  example: 'Meu Envelope'})
   @Prop()
   descricao: string
 
+  @ApiProperty({description: 'Conteúdo em base64 do envelope',  example: 'JVBERi0xLjUNCiW1t...'})
   @Prop()
   conteudo: string
 

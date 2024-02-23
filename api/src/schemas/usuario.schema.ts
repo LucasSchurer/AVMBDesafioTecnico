@@ -1,4 +1,5 @@
 import { Prop, Schema } from "@nestjs/mongoose";
+import { ApiProperty } from "@nestjs/swagger";
 
 export class UsuarioId {
     constructor(id: Number) {
@@ -10,19 +11,23 @@ export class UsuarioId {
 }
 
 @Schema()
-export class Usuario {
+export class Usuario {    
+    @ApiProperty()
     @Prop({required: true})
     id: Number
 
     @Prop({required: true})
     codigo: String
 
+    @ApiProperty({example: 'Meu Nome'})
     @Prop({required: true})
     nome: String
     
+    @ApiProperty({example: 'MN'})
     @Prop({required: true})    
     iniciais: String
 
+    @ApiProperty({example: 'meunome@gmail.com'})
     @Prop({required: true})
     email: String
 
